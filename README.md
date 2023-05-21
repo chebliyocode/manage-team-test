@@ -231,3 +231,14 @@ docker run -p 8080:8080 manage-team-test
 ## API docs
 
 - Swagger UI : http://localhost:8080/swagger-ui/index.html
+
+
+
+## Choix techniques
+- Hibernate : est utilisé comme framework de persistance objet-relationnel pour faciliter l'interaction avec la base de données relationnelle.
+- H2 : est utilisé comme base de données embarquée pour faciliter le développement et les tests.
+- Java 17 : est une version majeure de Java et offre de nouvelles fonctionnalités et améliorations.
+- Spring Boot : est utilisé pour simplifier le développement des applications Spring en fournissant une configuration automatique et des outils de gestion.
+- Docker : est utilisé pour la mise en conteneur de l'application, ce qui permet de créer un environnement de déploiement isolé et portable.
+- Lombok : est utilisé pour générer automatiquement le code boilerplate, réduisant ainsi la quantité de code verbeux et répétitif.
+- OpenAPI UI : est utilisé pour générer une interface utilisateur interactive à partir de la documentation OpenAPI, permettant aux développeurs d'explorer et de tester les API de manière conviviale.
