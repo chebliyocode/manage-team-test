@@ -1,0 +1,305 @@
+{
+	"info": {
+		"_postman_id": "470233f9-2ddb-4d9b-8f36-c81feb89cabb",
+		"name": "manage-teams-collection-rest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "player services",
+			"item": [
+				{
+					"name": "Create Player 1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"playerId\" : \"OGCN12355672\",\n    \"name\": \"Kasper Schmeichel\",\n    \"position\": \"keeper\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/manage/player",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"manage",
+								"player"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Player 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"playerId\" : \"PSG12345772\",\n    \"name\": \"Marco Verratti\",\n    \"position\": \"Midfielder\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/manage/player",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"manage",
+								"player"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find All Players Pageable",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"page\": 0,\n  \"size\": 10,\n  \"sort\": \"position\",\n  \"order\": \"ASC\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/manage/players",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"manage",
+								"players"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "team services",
+			"item": [
+				{
+					"name": "Create PSG Team With Players",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\" : 1,\n    \"name\": \"Paris Saint-Germain\",\n    \"acronym\": \"PSG\",\n    \"budget\": \"700000000\",\n    \"players\" : [\n        {\n            \"playerId\" : \"PSG12345672\",\n            \"name\": \"Kilian Mbappe\",\n            \"position\": \"Attacker\"\n        },\n        {\n            \"playerId\" : \"PSG1234362\",\n            \"name\": \"Hakimi achraf\",\n            \"position\": \"Defender\"\n        }\n        ,\n        {\n            \"playerId\" : \"PSG1234363\",\n            \"name\": \"Lionel Messi\",\n            \"position\": \"Attacker\"\n        }\n        ,\n        {\n            \"playerId\" : \"PSG1234364\",\n            \"name\": \"Neymar\",\n            \"position\": \"Attacker\"\n        }\n    \n    \n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/manage/team",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"manage",
+								"team"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Nice Team With Players",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\" : 2,\n    \"name\": \"OGC Nice\",\n    \"acronym\": \"OGCN\",\n    \"budget\": \"100000000\",\n    \"players\" : [\n        {\n            \"playerId\" : \"OGCN12345672\",\n            \"name\": \"Aaron Ramsey\",\n            \"position\": \"Midfielder\"\n        },\n        {\n            \"playerId\" : \"OGCN1234593\",\n            \"name\": \"Nicolas Pépé\",\n            \"position\": \"Attacker\"\n        },\n        {\n            \"playerId\" : \"OGCN1234594\",\n            \"name\": \"Marcin Bulka\",\n            \"position\": \"Keeper\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/manage/team",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"manage",
+								"team"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Marseille Team Without Players",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\" : 3,\n    \"name\": \"Olympique de Marseille\",\n    \"acronym\": \"OM\",\n    \"budget\": \"500000000\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/manage/team",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"manage",
+								"team"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find All Teams Pageable",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"page\": 0,\n  \"size\": 10,\n  \"sort\": \"budget\",\n  \"order\": \"DESC\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/manage/teams",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"manage",
+								"teams"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
